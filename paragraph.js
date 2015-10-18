@@ -50,7 +50,7 @@ app.get('/api/paragraph/:id', function(req, res) {
 
 });
 
-app.get('/api/paragraph', function(req, res) {
+app.get('/api/paragraph/list', function(req, res) {
 	paragraph.find({},function(err,paragraph){
 	console.log('p',paragraph);
 		res.send(paragraph);
