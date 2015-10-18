@@ -50,7 +50,7 @@ app.get('/api/paragraph/:id', function(req, res) {
 
 });
 
-app.get('/api/paragraph/', function(req, res) {
+app.get('/api/paragraph', function(req, res) {
 
 	paragraph.find(function(err,paragraph){
 
