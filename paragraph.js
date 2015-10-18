@@ -43,7 +43,7 @@ app.post('/api/paragraph/create', function(req, res) {
 app.get('/api/paragraph/:id', function(req, res) {
 
 	paragraph.findById(req.params.id, function(err,paragraph){
-
+		console.log(req.params.id);
 		res.send(paragraph);
 
 	});

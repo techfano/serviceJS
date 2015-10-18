@@ -72,7 +72,7 @@ app.post('/api/user/create', function(req, res) {
 
 app.get('/api/user/me/:id',authorized, function(req, res) {
 
-	mongodb.findId('user', req.params.id, function(err,user){
+	user.findById(req.params.id, function(err,user){
 
 		delete user.password;
 		delete user.username;
