@@ -51,7 +51,7 @@ app.get('/api/paragraph/:id', function(req, res) {
 });
 
 app.get('/api/paragraph', function(req, res) {
-	paragraph.find(function(err,paragraph){
+	paragraph.find({},function(err,paragraph){
 	console.log('p',paragraph);
 		res.send(paragraph);
 
