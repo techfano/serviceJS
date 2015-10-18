@@ -40,7 +40,7 @@ app.post('/api/paragraph/create', function(req, res) {
 
 });
 
-app.get('/api/paragraph/:id',authorized, function(req, res) {
+app.get('/api/paragraph/:id', function(req, res) {
 
 	paragraph.findById(req.params.id, function(err,paragraph){
 
@@ -50,7 +50,7 @@ app.get('/api/paragraph/:id',authorized, function(req, res) {
 
 });
 
-app.get('/api/paragraph/',authorized, function(req, res) {
+app.get('/api/paragraph/', function(req, res) {
 
 	paragraph.find(function(err,paragraph){
 
