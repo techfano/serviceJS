@@ -51,6 +51,38 @@ function authorized(req, res, next) {
 
 }
 
+app.post('/api/user/create', function(req, res) {
+
+	var newUser = user(req.body);
+
+	if (!req.body){ 
+
+	 	return res.sendStatus(400);
+	
+	}else{
+
+	 	newUser.save(function(err) {
+	 	  if (err){ res.send(err); };
+	 	  res.send('User created!');
+	 	});
+
+	}
+
+});
+
+app.get('/api/user/me/:id',authorized, function(req, res) {
+
+	mongodb.findId('user', req.params.id, function(err,user){
+
+		delete user.password;
+		delete user.username;
+
+		res.send(user);
+
+	});
+
+});
+
 app.get('/api/auth/login/:username/:password', function(req, res) {
 
 	var params = {
@@ -93,27 +125,6 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 });
 
-app.post('/api/user/create', function(req, res) {
-
-	var newUser = user(req.body);
-
-	if (!req.body){ 
-
-	 	return res.sendStatus(400);
-	
-	}else{
-
-	 	newUser.save(function(err) {
-	 	  if (err){ res.send(err); };
-	 	  res.send('User created!');
-	 	});
-
-	}
-
-});
-
-
-
 app.get('/api/auth/verify',authorized,function(req, res){
 
 	var header = req.headers;
@@ -135,22 +146,8 @@ app.get('/api/auth/verify',authorized,function(req, res){
 
 });
 
-/*
 
-app.get('/api/user/me/:id',authorized, function(req, res) {
-
-	mongodb.findId('user', req.params.id, function(err,user){
-
-		delete user.password;
-		delete user.username;
-
-		res.send(user);
-
-	});
-
-});*/
-
-app.listen(80);
-console.log("App listening on port 80");
+app.listen(81);
+console.log("App listening on port 81");
 
 
