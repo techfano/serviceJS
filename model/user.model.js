@@ -11,7 +11,7 @@ var userSchema = new Schema({
   lastName: String,
   birthDay: Date,
   location: String,
-  created_at: Date
+  created_at: { type: Date, default: Date.now }
 },{ collection: 'user' });
 
 var user = mongoose.model('user', userSchema);

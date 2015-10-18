@@ -7,7 +7,8 @@ var paragraphSchema = new Schema({
     post_number_order: Number,
     subtitle: String,
     paragraph: String,
-    image_url: String
+    image_url: String,
+    created_at: { type: Date, default: Date.now }
 },{ collection: 'paragraph' });
 
 var paragraph = mongoose.model('paragraph', paragraphSchema);
