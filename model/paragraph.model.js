@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
+var paragraphSchema = new Schema({
     post_id: String,
     post_url: String,
     post_number_order: Number,
