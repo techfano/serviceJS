@@ -10,9 +10,3 @@ var authorSchema = new Schema({
 var author = mongoose.model('author', authorSchema);
 
 module.exports = author;
-
-{
-    "name": "Alexandro Estefano",
-    "last_name": "Castañeda",
-    "alias": "Techfano"
-}
