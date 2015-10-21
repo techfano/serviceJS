@@ -49,7 +49,7 @@ app.get('/api/post/:id', function(req, res) {
 
 });
 
-app.get('/api/post/:url', function(req, res) {
+app.get('/api/post/get/url/:url', function(req, res) {
 
 	post.find({url:req.params.url}, function(err,post){
 		res.send(post);
