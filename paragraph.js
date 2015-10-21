@@ -49,7 +49,7 @@ app.get('/api/paragraph/:id', function(req, res) {
 
 });
 
-app.get('/api/paragraph/:url', function(req, res) {
+app.get('/api/paragraph/get/url/:url', function(req, res) {
 
 	paragraph.find({url:req.params.url}, function(err,paragraph){
 		res.send(paragraph);
