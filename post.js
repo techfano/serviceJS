@@ -43,7 +43,15 @@ app.post('/api/post/create', function(req, res) {
 app.get('/api/post/:id', function(req, res) {
 
 	post.findById(req.params.id, function(err,post){
-		console.log(req.params.id);
+		res.send(post);
+
+	});
+
+});
+
+app.get('/api/post/:url', function(req, res) {
+
+	post.find({url:req.params.url}, function(err,post){
 		res.send(post);
 
 	});
@@ -52,7 +60,6 @@ app.get('/api/post/:id', function(req, res) {
 
 app.get('/api/post/get/all', function(req, res) {
 	post.find({},function(err,post){
-	console.log('p',post);
 		res.send(post);
 
 	});
