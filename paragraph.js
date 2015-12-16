@@ -43,16 +43,22 @@ app.post('/api/paragraph/create', function(req, res) {
 app.get('/api/paragraph/:id', function(req, res) {
 
 	paragraph.findById(req.params.id, function(err,paragraph){
-		console.log(req.params.id);
 		res.send(paragraph);
 
 	});
 
 });
 
+app.get('/api/paragraph/get/url/:post_url', function(req, res) {
+
+	paragraph.find({post_url:req.params.post_url}, function(err,paragraph){
+		res.send(paragraph);
+	});
+
+});
+
 app.get('/api/paragraph/get/all', function(req, res) {
 	paragraph.find({},function(err,paragraph){
-	console.log('p',paragraph);
 		res.send(paragraph);
 
 	});
