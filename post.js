@@ -59,5 +59,5 @@ app.get('/api/post/get/all', function(req, res) {
 
 });
 
-app.listen(83);
-console.log("App listening on port 83");
+app.listen(8003);
+console.log("App listening on port 8003");

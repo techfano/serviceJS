@@ -59,5 +59,5 @@ app.get('/api/paragraph/get/all', function(req, res) {
 
 });
 
-app.listen(82);
-console.log("App listening on port 82");
+app.listen(8002);
+console.log("App listening on port 8002");

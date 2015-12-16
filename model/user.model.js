@@ -6,9 +6,9 @@ var userSchema = new Schema({
   password: { type: String, required: true },
   email: String,
   name: String,
+  lastName: String,
   admin: Boolean,
   root: Boolean,
-  lastName: String,
   birthDay: Date,
   location: String,
   created_at: { type: Date, default: Date.now }

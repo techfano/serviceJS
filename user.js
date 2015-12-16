@@ -147,7 +147,7 @@ app.get('/api/auth/verify',authorized,function(req, res){
 });
 
 
-app.listen(81);
-console.log("App listening on port 81");
+app.listen(8001);
+console.log("App listening on port 8001");
 
 

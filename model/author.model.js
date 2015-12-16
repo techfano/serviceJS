@@ -2,8 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var authorSchema = new Schema({
-	name: String,
-	last_name: String,
+	userId: {type: String, required: true, unique: true},
 	alias: String
 },{ collection: 'author' });
 
