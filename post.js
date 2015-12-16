@@ -40,6 +40,12 @@ app.post('/api/post/create', function(req, res) {
 
 });
 
+app.update('/api/post/update',function(req,res){
+	post.findOneAndUpdate({ _id: '5670f6d002740a542843d435' }, function (err, post) {
+		res.send(post);
+	});
+});
+
 app.get('/api/post/:id', function(req, res) {
 
 	post.findById(req.params.id, function(err,post){
