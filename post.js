@@ -40,7 +40,7 @@ app.post('/api/post/create', function(req, res) {
 
 });
 
-app.update('/api/post/update',function(req,res){
+app.put('/api/post/update',function(req,res){
 	post.findOneAndUpdate({ _id: '5670f6d002740a542843d435' }, req.body, function (err, post) {
 		res.send(post);
 	});
