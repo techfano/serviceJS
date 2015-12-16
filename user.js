@@ -8,7 +8,7 @@ var express = require('express')
 var app = express()
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/academydb');
+mongoose.connect('mongodb://localhost/prodesigndb');
 
 var errorResponse ='Error in authentication, user or Password.';
 var expiredMinutesSession = 600;
