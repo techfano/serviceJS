@@ -40,6 +40,12 @@ app.post('/api/paragraph/create', function(req, res) {
 
 });
 
+app.put('/api/paragraph/update/:id',function(req,res){
+	paragraph.findOneAndUpdate({ _id: req.params.id }, req.body, function (err, paragraph) {
+		res.send(req.body);
+	});
+});
+
 app.get('/api/paragraph/:id', function(req, res) {
 
 	paragraph.findById(req.params.id, function(err,paragraph){
